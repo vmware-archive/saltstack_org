@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/srv/http/saltstack.org/database.sqlite',
+        'NAME': '/srv/http/saltstack.org/database/database.sqlite',
     }
 }
 
