@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load flatpages %}
+
+{% block nav %}
+    <div class="mod nav">
+        <ul class="bd">
+            {% get_flatpages '/install/' as install_pages %}
+            {% with install_pages|first as install %}
+            <li><a href="{{ install.url }}">Installation instructions</a>
+            {% endwith %}
+                {% if request.path|slice:":9" == "/install/" %}
+                {% with install_pages|slice:"1:" as pages %}
+                {% if pages %}
+                    <ul>
+                    {% for page in pages|dictsort:"title" %}
+                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+                {% endif %}
+            </li>
+
+            {% get_flatpages '/faq/' as faq_pages %}
+            {% with faq_pages|first as faq %}
+            <li><a href="{{ faq.url }}">{{ faq.title }}</a></li>
+            {% endwith %}
+
+            <li class="ext"><a href="http://docs.saltstack.org/">Documentation &gt;</a></li>
+
+            <li class="ext"><a href="http://red45.wordpress.com/">Blog &gt;</a></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="mod content">
+        <div class="hd">{% block hd_main %}{% endblock %}</div>
+        <div class="bd">{% block bd_main %}{% endblock %}</div>
+        <div class="ft">{% block ft_main %}{% endblock %}</div>
+    </div>
+{% endblock %}

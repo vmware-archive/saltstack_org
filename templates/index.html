@@ -1,0 +1,52 @@
+{% extends "base_content.html" %}
+
+{% block bd_main %}
+    <p>Salt is <strong>remote execution</strong> and <strong>configuration
+    management</strong>.</p>
+
+    <p>Salt is designed to be secure using <strong>AES encryption</strong> and
+    <strong>public-key authentication</strong>; incredibly scaleable using an
+    advanced <strong>ZeroMQ</strong> topology; fast and efficient using
+    <strong>msgpack</strong>; and extensible using small and simple
+    <strong>Python</strong> modules.</p>
+{% endblock %}
+
+{% block content_main_bottom %}
+    <b class="bottom"><b class="bl"></b><b class="br"></b></b>
+{% endblock %}
+
+{% block content_addtl %}
+    <div class="mod container content_addtl">
+        <div class="hd">
+            <h3>Get help. Get involved.</h3>
+        </div>
+
+        <div class="bd">
+            <dl>
+                <dt><a href="https://github.com/saltstack/salt/">
+                    <img src="{{ STATIC_URL }}img/logos/github.png"></a></dt>
+                <dd><p><a href="https://github.com/saltstack/salt/issues/">Search bugs</a> or file one.</p></dd>
+
+                <dt><a href="https://www.ohloh.net/p/salt">
+                    <img src="{{ STATIC_URL }}img/logos/ohlohlogo.png"></a></dt>
+                <dd><p>View the code analysis for Salt.</p></dd>
+
+                {% with "http://webchat.freenode.net/?channels=salt&uio=Mj10cnVlJjk9dHJ1ZSYxMD10cnVl83" as freenode_webchat %}
+                <dt><a href="{{ freenode_webchat }}">
+                    <img src="/static/img/logos/freenode.png"></a></dt>
+                <dd><p>Join us via IRC in the <a href="{{ freenode_webchat }}"><tt>#salt</tt></a> channel.</p></dd>
+                {% endwith %}
+
+                {% with "https://groups.google.com/forum/#!topic/salt-users/" as group_url %}
+                <dt><a href="{{ group_url }}">
+                    <img src="{{ STATIC_URL }}img/logos/google-groups.gif"></a></dt>
+                <dd><form action="http://groups.google.com/group/salt-users/boxsubscribe">
+                    <p>Join the <a href="{{ group_url }}">mailing list</a>:
+                    <br>
+                    <input type="email" name="email" placeholder="Email address">
+                    <button type="submit" name="sub">Subscribe</button></p>
+                </form></dd>
+                {% endwith %}
+            </dl>
+        </div>
+{% endblock %}

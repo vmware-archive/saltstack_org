@@ -33,6 +33,10 @@ USE_L10N = True
 ADMIN_FOR = ('saltstack_org.settings',)
 LOGIN_REDIRECT_URL = '/'
 
+RESTRUCTUREDTEXT_FILTER_SETTINGS = {
+    'initial_header_level': 3,
+}
+
 SENTRY_REMOTE_URL = 'http://localhost/sentry/store/'
 SENTRY_KEY = secret.get('SALT', 'SENTRY_KEY')
 

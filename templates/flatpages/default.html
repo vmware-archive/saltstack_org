@@ -1,0 +1,9 @@
+{% extends "base_content.html" %}
+{% load markup %}
+
+{% block title %}{{ flatpage.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h2>{{ flatpage.title }}</h2>
+    {{ flatpage.content|restructuredtext }}
+{% endblock %}

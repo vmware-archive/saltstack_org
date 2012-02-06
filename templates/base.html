@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Salt Stack{% endblock %}</title>
+
+        <meta name="author" content="Lucas Ackley">
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/master.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Terminal+Dosis">
+    </head>
+
+    <body>
+        <div class="mod header">
+            <h1><a href="{% url index %}">Salt Stack</a></h1>
+        </div>
+
+        {% block content_main %}
+        <div class="mod container content">
+            <b class="top"><b class="tl"></b><b class="tr"></b></b>
+            <div class="hd"></div>
+            <div class="bd">
+                {% block nav %}{% endblock %}
+                {% block content %}Welcome to Salt Stack{% endblock %}
+            </div>
+            <div class="ft"></div>
+            {% block content_main_bottom %}{% endblock %}
+        </div>
+        {% endblock %}
+
+        {% block content_addtl %}{% endblock %}
+
+        {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> #}
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js"></script>
+    </body>
+</html>

@@ -4,9 +4,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'saltstack_org.views.home', name='home'),
-    # url(r'^saltstack_org/', include('saltstack_org.foo.urls')),
+    url(r'^$', 'django.views.generic.simple.direct_to_template', {
+        'template': 'index.html'}, name='index'),
 
     # Legacy URL from Sphinx homepage
     url(r'home', 'django.views.generic.simple.redirect_to', {
