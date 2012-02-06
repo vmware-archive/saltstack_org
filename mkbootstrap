@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+"""Generate a virtualenv bootstrap script for saltstack_org
+
+"""
+import os
+import textwrap
+import virtualenv
+from optparse import OptionParser
+
+EXTRA_TEXT = textwrap.dedent("""\
+    GIT_REPO = "git://github.com/saltstack/saltstack_org.git"
+    PROJ = "saltstack_org"
+    REQS = join(PROJ, "REQS.txt")
+
+    def after_install(options, home_dir):
+        home_dir, lib_dir, inc_dir, bin_dir = path_locations(home_dir)
+        site_pkgs = join(lib_dir, 'site-packages')
+
+        for folder in ('media', 'static'):
+            os.makedirs(join(home_dir, folder))
+
+        subprocess.call('git clone {0} {1}'.format(
+            GIT_REPO,
+            join(home_dir, 'saltstack_org')), shell=True)
+
+        subprocess.call('{0} install -r {1}'.format(
+            join(bin_dir, 'pip'),
+            join(home_dir, REQS)), shell=True)
+
+        with open(join(site_pkgs, 'saltstack_org.pth'), 'w') as pth:
+            pth.write(os.path.abspath(home_dir))
+    """)
+
+if __name__ == '__main__':
+    parser = OptionParser(description=__doc__, usage="%prog -f FILE")
+    parser.add_option('-f', '--file',
+            help="Write the bootstrap script to this filename")
+    options, args = parser.parse_args()
+
+    if not options.file:
+        parser.print_help()
+        exit(1)
+
+    with open(options.file, 'w') as filename:
+        filename.write(virtualenv.create_bootstrap_script(EXTRA_TEXT))
+
+    os.chmod(options.file, 0755)
+    print "Bootstrap file written to {0}".format(os.path.abspath(options.file))
