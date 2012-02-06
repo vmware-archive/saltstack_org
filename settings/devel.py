@@ -18,6 +18,10 @@ DATABASES['default']['NAME'] = _proj('development.sqlite3')
 MEDIA_ROOT = _proj(os.path.pardir, 'media')
 STATIC_ROOT = _proj(os.path.pardir, 'static')
 
+FIXTURE_DIRS = (
+    _proj('fixtures'),
+)
+
 STATICFILES_DIRS = (
     _proj('static'),
 )

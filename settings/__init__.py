@@ -40,6 +40,10 @@ RESTRUCTUREDTEXT_FILTER_SETTINGS = {
 SENTRY_REMOTE_URL = 'http://localhost/sentry/store/'
 SENTRY_KEY = secret.get('SALT', 'SENTRY_KEY')
 
+FIXTURE_DIRS = (
+    '/srv/http/saltstack.org/saltstack_org/fixtures',
+)
+
 MEDIA_ROOT = '/srv/http/saltstack.org/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/srv/http/saltstack.org/static'
