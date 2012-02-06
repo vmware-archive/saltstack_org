@@ -1,0 +1,3 @@
+[
+{"pk": null, "model": "flatpages.flatpage", "fields": {"registration_required": false, "title": "FAQ", "url": "/faq/", "template_name": "", "sites": [1], "content": "What ports does the master need open?\r\n    ``4505`` and ``4506``\r\n    This is configurable in the master config. The first port is used to send the to publish commands to the minions and the second port is used to listen for replies from the minions.\r\n\r\nCan you use tabs in ``sls`` files?\r\n    The default renderer, YAML, does not allow tab characters for indentation.", "enable_comments": false}}
+]
