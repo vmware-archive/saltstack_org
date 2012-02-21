@@ -111,8 +111,22 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'sentry.client.handlers.SentryHandler',
         },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'file':{
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/django.log',
+        },
     },
     'loggers': {
+        # 'django.request': {
+        #     'handlers': ['mail_admins', 'file'],
+        #     'level': 'ERROR',
+        #     'propagate': True,
+        # },
         'saltstack.sentry': {
             'handlers': ['saltsentry'],
             'level': 'DEBUG',
