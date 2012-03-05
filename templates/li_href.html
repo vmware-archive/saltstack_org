@@ -1,0 +1,7 @@
+{% load url from future %}
+<li{% if page in actives %} class="active"{% endif %}>
+{% if page == 'index' %}
+<a href="{% url 'index' %}">{{ text }}</a></li>
+{% else %}
+<a href="{% url 'page' slug %}">{% if icon %}<i class="{{ icon }}"></i> {% endif %}{{ text }}</a></li>
+{% endif %}

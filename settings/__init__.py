@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sentry',
     'sentry.client',
+    'saltstack_org.saltutil',
 ]
 
 LOGGING = {
