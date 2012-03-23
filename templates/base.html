@@ -4,33 +4,76 @@
         <meta charset="utf-8">
         <title>{% block title %}Salt Stack{% endblock %}</title>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <meta name="author" content="Lucas Ackley">
 
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/master.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Terminal+Dosis">
+        {% if debug %}
+        <link rel="stylesheet/less" href="{{ STATIC_URL }}less/bootstrap.less">
+        <script src="{{ STATIC_URL }}js/less-1.3.0.min.js"></script>
+        {% else %}
+        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+        {% endif %}
+
+        <style>
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+            .navbar .nav-logo {
+                float: left; margin-right: 3em;
+                background: url({{ STATIC_URL }}img/icon.png) no-repeat center left;
+            }
+            dl.logos dt img {
+                width: auto;
+                height: 20px;
+            }
+        </style>
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="{{ STATIC_URL }}js/modernizr.custom.90877.js"></script>
+
+        <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     </head>
 
     <body>
-        <div class="mod header">
-            <h1><a href="{% url index %}">Salt Stack</a></h1>
-        </div>
-
-        {% block content_main %}
-        <div class="mod container content">
-            <b class="top"><b class="tl"></b><b class="tr"></b></b>
-            <div class="hd"></div>
-            <div class="bd">
-                {% block nav %}{% endblock %}
-                {% block content %}Welcome to Salt Stack{% endblock %}
-            </div>
-            <div class="ft"></div>
-            {% block content_main_bottom %}{% endblock %}
+        {% block navbar %}
+        <div class="navbar">
         </div>
         {% endblock %}
 
-        {% block content_addtl %}{% endblock %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
 
-        {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> #}
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js"></script>
+            {% block footer %}
+            <hr>
+
+            <footer>
+                <p>&copy; Salt Stack 2012</p>
+            </footer>
+            {% endblock %}
+        </div>
+
+        <script>
+            Modernizr.load([{
+                load: [
+                    {% if debug %}
+                    '{{ STATIC_URL }}js/jquery.min.js',
+                    '{{ STATIC_URL }}js/underscore-min.js',
+                    '{{ STATIC_URL }}js/bootstrap.min.js'
+                    {% else %}
+                    'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js',
+                    'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js',
+                    'http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.0/bootstrap.min.js'
+                    {% endif %}
+                ]
+            }]);
+        </script>
+
+        {% block extra_script %}{% endblock %}
     </body>
 </html>

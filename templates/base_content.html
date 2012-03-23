@@ -1,42 +1,57 @@
 {% extends "base.html" %}
-{% load flatpages %}
+{% load url from future %}
+{% load li_href %}
 
-{% block nav %}
-    <div class="mod nav">
-        <ul class="bd">
-            {% get_flatpages '/install/' as install_pages %}
-            {% with install_pages|first as install %}
-            <li><a href="{{ install.url }}">Installation instructions</a>
-            {% endwith %}
-                {% if request.path|slice:":9" == "/install/" %}
-                {% with install_pages|slice:"1:" as pages %}
-                {% if pages %}
-                    <ul>
-                    {% for page in pages|dictsort:"title" %}
-                        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
-                {% endwith %}
-                {% endif %}
-            </li>
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
 
-            {% get_flatpages '/faq/' as faq_pages %}
-            {% with faq_pages|first as faq %}
-            <li><a href="{{ faq.url }}">{{ faq.title }}</a></li>
-            {% endwith %}
+            <a class="brand" href="{% url 'page' 'index' %}">Salt Stack</a>
 
-            <li class="ext"><a href="http://docs.saltstack.org/">Documentation &gt;</a></li>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'page' 'code' %}">Code</a></li>
+                    <li><a href="{% url 'page' 'follow' %}">Follow</a></li>
+                    <li><a href="{% url 'page' 'communicate' %}">Communicate</a></li>
+                    <li><a href="{% url 'page' 'learn' %}">Learn</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li><a href="{% url 'download' %}">Download</a></li>
+                    <li><a href="{% url 'documentation' %}">Documentation &raquo;</a></li>
+                </ul>
 
-            <li class="ext"><a href="http://red45.wordpress.com/">Blog &gt;</a></li>
-        </ul>
+                {% comment %}
+                <form class="navbar-search pull-right">
+                    <input type="text" class="search-query" placeholder="Search">
+                </form>
+                {% endcomment %}
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}
 
-{% block content %}
-    <div class="mod content">
-        <div class="hd">{% block hd_main %}{% endblock %}</div>
-        <div class="bd">{% block bd_main %}{% endblock %}</div>
-        <div class="ft">{% block ft_main %}{% endblock %}</div>
-    </div>
+{% block extra_script %}
+<script>
+    Modernizr.load([{
+        load: [
+            '{{ STATIC_URL }}js/backbone.js',
+            '{{ STATIC_URL }}js/json2.js',
+            '{{ STATIC_URL }}js/saltstack.js'],
+        callback: function(url, result, key) {
+            !function( $ ) {
+                $('.hero-unit .carousel').carousel({
+                    interval: 2000
+                })
+            }( window.jQuery );
+        }
+    }]);
+</script>
 {% endblock %}

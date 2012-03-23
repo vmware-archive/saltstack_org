@@ -12,28 +12,26 @@ _proj = lambda *x: os.path.join(os.path.abspath(
     os.path.dirname(saltstack_org.__file__)), *x)
 
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 DATABASES['default']['NAME'] = _proj('development.sqlite3')
 
 MEDIA_ROOT = _proj(os.path.pardir, 'media')
 STATIC_ROOT = _proj(os.path.pardir, 'static')
 
-FIXTURE_DIRS = (
+FIXTURE_DIRS = [
     _proj('fixtures'),
-)
+]
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     _proj('static'),
-)
+]
 
-TEMPLATE_DIRS = (
+TEMPLATE_DIRS = [
     _proj('templates'),
-)
+]
 
 SENTRY_KEY = ''
 SENTRY_REMOTE_URL = ''
 SENTRY_TESTING = True
 SENTRY_PUBLIC = True
-
-INSTALLED_APPS += [
-]
