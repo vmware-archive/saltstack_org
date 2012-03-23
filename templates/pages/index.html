@@ -1,0 +1,78 @@
+{% extends "base_content.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="hero-unit carousel" id="hero-quotes">
+        <div class="carousel-inner">
+            <div class="active item">
+                <p>Get involved</p>
+                <p>Join the Masters, contribute, learn, code</p>
+            </div>
+
+            <div class="item">
+                <p>Follow the Salty waves</p>
+                <p>Watch us on github</p>
+                <p>Join the mailing list</p>
+                <p>Follow Salt Stack on Twitter</p>
+            </div>
+
+            <div class="item">
+                <p>Don't be a Minion, Become a Master!</p>
+                <p>Participate in events</p>
+                <p>Present at a local users group</p>
+            </div>
+
+            <div class="item">
+                <p>Communicate</p>
+                <p>Get answers to questions</p>
+                <p>Share your ideas</p>
+                <p>Get help contributing</p>
+            </div>
+        </div>
+
+        <a class="carousel-control left" href="#hero-quotes" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#hero-quotes" data-slide="next">&rsaquo;</a>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <h1>What happening in Salt <small>right now</small></h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span3">
+            <h2>Accolades</h2>
+            <p></p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+
+        <div class="span3">
+            <h2>Commits</h2>
+
+            <ul id="thelist"></ul>
+
+            <script type="text/template" id="gh-commits">
+                <% _.each(commits, function(i) { %>
+                    <li><%= i.sha %></li>
+                <% }); %>
+            </script>
+
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+
+        <div class="span3">
+            <h2>Questions being asked</h2>
+            <p></p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+
+        <div class="span3">
+            <h2>Issues being resolved</h2>
+            <p></p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
