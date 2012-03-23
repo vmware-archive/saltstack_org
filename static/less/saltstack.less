@@ -1,0 +1,38 @@
+// Saltstack.less
+// Based on the Journal (2.0.2) swatch
+// -----------------------------------------------------
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+@import url(http://fonts.googleapis.com/css?family=Satisfy);
+
+// SCAFFOLDING
+// -----------------------------------------------------
+
+div.subnav {
+	background-color: @navbarBackground;
+	background-image: none;
+	@shadow: 0 1px 2px rgba(0,0,0,.25);
+	.box-shadow(@shadow);
+}
+
+// BUTTONS
+// -----------------------------------------------------
+
+.btn-primary {
+  .buttonBackground(lighten(@linkColor, 5%), @linkColor);
+}
+
+
+// MISC
+// -----------------------------------------------------
+
+code, pre, pre.prettyprint, .well, .form-actions {
+	background-color: @grayLighter;
+}
+
+.table-bordered, .well, .prettyprint {
+	.border-radius(0);
+}
