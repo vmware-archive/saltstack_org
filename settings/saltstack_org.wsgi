@@ -2,13 +2,23 @@ import os
 import sys
 import site
 
-### Configure which settings file to look at for this environment
-os.environ['DJANGO_SETTINGS_MODULE'] = 'saltstack_org.settings'
-
 ### Put virtualenv on the PYTHONPATH
-site.addsitedir('/srv/http/saltstack.org/lib/python2.7/site-packages')
+site.addsitedir('/srv/http/saltstack/lib/python2.7/site-packages')
 
 ### Create the wsgi application
 import django.core.handlers.wsgi
 
-application = django.core.handlers.wsgi.WSGIHandler()
+dj_application = django.core.handlers.wsgi.WSGIHandler()
+
+def salt_application(environ, start_response):
+    if environ['HTTP_HOST'].endswith('saltstack.org'):
+        settings = 'saltstack_org.settings'
+    elif environ['HTTP_HOST'].endswith('saltstack.com'):
+        settings = 'saltstack_com.settings'
+    else:
+        raise NotImplementedError()
+
+    os.environ['DJANGO_SETTINGS_MODULE'] = settings
+    return dj_application(environ, start_response)
+
+application = salt_application
