@@ -16,7 +16,10 @@ def salt_application(environ, start_response):
     elif environ['HTTP_HOST'].endswith('saltstack.com'):
         settings = 'saltstack_com.settings'
     else:
-        raise NotImplementedError()
+        status = '400 Bad Request'
+        response_headers = [('Content-type','text/html')]
+        start_response(status, response_headers)
+        return [status]
 
     os.environ['DJANGO_SETTINGS_MODULE'] = settings
     return dj_application(environ, start_response)
