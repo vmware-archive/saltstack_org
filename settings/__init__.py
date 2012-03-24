@@ -5,7 +5,7 @@ secret = ConfigParser.ConfigParser()
 secret.optionxform = lambda x: x.upper()
 secret.read([
     os.path.join(os.path.dirname(__file__), 'secrets.conf'),
-    '/srv/http/saltstack.org/secrets.conf'])
+    '/srv/http/saltstack/secrets.conf'])
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -17,7 +17,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/srv/http/saltstack.org/database/database.sqlite',
+        'NAME': '/srv/http/saltstack/database/database.sqlite',
     }
 }
 
@@ -42,17 +42,17 @@ SENTRY_REMOTE_URL = 'http://localhost/sentry/store/'
 SENTRY_KEY = secret.get('SALT', 'SENTRY_KEY')
 
 FIXTURE_DIRS = (
-    '/srv/http/saltstack.org/saltstack_org/fixtures',
+    '/srv/http/saltstack/saltstack_org/fixtures',
 )
 
-MEDIA_ROOT = '/srv/http/saltstack.org/media'
+MEDIA_ROOT = '/srv/http/saltstack/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/srv/http/saltstack.org/static'
+STATIC_ROOT = '/srv/http/saltstack/static'
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = [
-    '/srv/http/saltstack.org/saltstack_org/static',
+    '/srv/http/saltstack/saltstack_org/static',
 ]
 
 STATICFILES_FINDERS = (
@@ -61,7 +61,7 @@ STATICFILES_FINDERS = (
 )
 
 TEMPLATE_DIRS = [
-    '/srv/http/saltstack.org/saltstack_org/templates',
+    '/srv/http/saltstack/saltstack_org/templates',
 ]
 
 TEMPLATE_LOADERS = (
