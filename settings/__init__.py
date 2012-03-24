@@ -113,15 +113,15 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'sentry.client.handlers.SentryHandler',
         },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'file':{
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/tmp/django.log',
-        },
+        # 'mail_admins': {
+        #     'level': 'ERROR',
+        #     'class': 'django.utils.log.AdminEmailHandler'
+        # },
+        # 'file':{
+        #     'level': 'DEBUG',
+        #     'class': 'logging.FileHandler',
+        #     'filename': '/tmp/django.log',
+        # },
     },
     'loggers': {
         # 'django.request': {
