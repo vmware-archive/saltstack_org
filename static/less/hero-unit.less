@@ -14,10 +14,18 @@
     margin-bottom: 0;
     font-size: 60px;
     line-height: 1;
-    color: @heroUnitHeadingColor;
+    color: @blue;
     font-family: @heroUnitHeadingFont;
     letter-spacing: -1px;
+
   }
+  .textshadow & {
+    h1 {
+      color: @heroUnitHeadingColor;
+      .text-shadow(@heroUnitBackground);
+    }
+  }
+
   p {
     font-size: 18px;
     font-weight: 200;
