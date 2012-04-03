@@ -33,7 +33,12 @@
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        {% if debug %}
+        <script src="{{ STATIC_URL }}js/modernizr-2.5.3.js"></script>
+        <script src="{{ STATIC_URL }}js/yepnope.1.5.3.js"></script>
+        {% else %}
         <script src="{{ STATIC_URL }}js/modernizr.custom.90877.js"></script>
+        {% endif %}
 
         <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     </head>
