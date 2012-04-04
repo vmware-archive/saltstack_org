@@ -4,10 +4,30 @@
 .hero-unit {
   background-color: @heroUnitBackground;
   .border-radius(6px);
+  margin-bottom: 30px;
+  position: relative;
 
-  .hero-content {
+  .hero-container {
     padding: 60px;
-    margin-bottom: 30px;
+
+    .hero-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      z-index: 0;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .hero-content {
+      z-index: 1;
+      position: relative;
+    }
   }
 
   h1 {
