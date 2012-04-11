@@ -11,7 +11,9 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1',)
 
-ADMINS = (('Seth House', 'seth@eseth.com'))
+ADMINS = (
+        ('Thomas S. Hatch', 'thatch@saltstack.com'),
+        ('Seth House', 'seth@eseth.com'))
 MANAGERS = ADMINS
 
 DATABASES = {

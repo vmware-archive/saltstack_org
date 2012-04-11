@@ -16,6 +16,9 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES['default']['NAME'] = _proj('development.sqlite3')
 
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
 MEDIA_ROOT = _proj(os.path.pardir, 'media')
 STATIC_ROOT = _proj(os.path.pardir, 'static')
 
