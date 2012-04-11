@@ -40,7 +40,7 @@ RESTRUCTUREDTEXT_FILTER_SETTINGS = {
     'initial_header_level': 3,
 }
 
-SENTRY_REMOTE_URL = 'http://localhost/sentry/store/'
+SENTRY_REMOTE_URL = ''
 SENTRY_KEY = secret.get('SALT', 'SENTRY_KEY')
 
 FIXTURE_DIRS = (
