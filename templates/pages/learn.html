@@ -3,26 +3,97 @@
 {% block content %}
 <div class="container">
     <div class="hero-unit">
-        <h1>Learn</h1>
-        <p>Start down the path to become a Salt master, read the documentation, get into the code, watch screencasts and presentations.</p>
-        <p>The Official Salt documentation is continuously built via readthedocs.org:</p>
-        <p>http://docs.saltstack.com</p>
+        <div class="hero-container">
+            <div class="hero-bg"><img src="/static/img/community.jpg" alt=""></div>
+            <div class="hero-content">
+                <h1>Learn</h1>
+                <p>Start down the path to become a Salt master, read the
+                documentation, get into the code, watch screencasts and
+                presentations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span6">
+            <h2>Learn the code</h2>
+
+            <dl class="logos">
+                <dt><a href="https://github.com/saltstack/salt/">
+                    <img src="{{ STATIC_URL }}img/logos/github.png"></a></dt>
+                <dd>
+                <p>Join the Salt development team on GitHub, contribute code,
+                watch the active development, fork Salt Stack projects and help
+                us deliver a continually growing and exciting project. If you
+                are new to git and GitHub there are many tools to help you
+                become involved in Salt.</p>
+
+                <p>Fork Salt on GitHub and get involved!</p>
+
+                <p>Salt’s code is hosted on GitHub, if you are unfamiliar with
+                git and github, then there are many resources available. Look
+                at the github help to learn how to contribute code to Salt!</p>
+
+                <p><a href="http://help.github.com">http://help.github.com</a></p>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="span6">
+            <h2>Communicate</h2>
+            <p>Salt has been made to be easy to expand, and we want your
+            expansions! Dive into the code to learn how to mold Salt to your
+            needs and be able to contribute back to the community.</p>
+
+            <dl class="logos">
+                {% with "http://webchat.freenode.net/?channels=salt&uio=Mj10cnVlJjk9dHJ1ZSYxMD10cnVl83" as freenode_webchat %}
+                <dt><a href="{{ freenode_webchat }}">
+                    <img src="/static/img/logos/freenode.png"></a></dt>
+                <dd><p>Join us via IRC in the <a href="{{ freenode_webchat }}"><tt>#salt</tt></a> channel.</p></dd>
+                {% endwith %}
+
+
+                {% with "https://groups.google.com/forum/#!topic/salt-users/" as group_url %}
+                <dt><a href="{{ group_url }}">
+                    <img src="{{ STATIC_URL }}img/logos/google-groups.gif"></a></dt>
+                <dd><form action="http://groups.google.com/group/salt-users/boxsubscribe">
+                    <p>Join the <a href="{{ group_url }}">mailing list</a>:
+                    <br>
+                    <input type="email" name="email" placeholder="Email address">
+                    <button type="submit" name="sub">Subscribe</button></p>
+                </form></dd>
+                {% endwith %}
+            </dl>
+        </div>
     </div>
 
     <div class="row">
         <div class="span4">
+            <h3>Documentation</h3>
+
+            <p>The Official Salt documentation is continuously built via
+            readthedocs.org: http://docs.saltstack.com</p>
+
+            <!--
+            <When/if we get a community wiki up>
+            Contribute to and read information from the community wiki:
+            http://wikiawesome.awesome
+            -->
+        </div>
+
+        <div class="span4">
+            <h3>Screencasts</h3>
+            <p>
             Screencast series:
+
+            blip.tv url
+            </p>
         </div>
 
         <div class="span4">
-            blip.tv url (embeds?)
-        </div>
-
-        <div class="span4">
-            Presentations:
-            List presentations
+            <h3>Presentations</h3>
+            <p>List presentations</p>
         </div>
     </div>
 </div>
-
 {% endblock %}

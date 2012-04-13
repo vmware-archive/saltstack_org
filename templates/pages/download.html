@@ -1,0 +1,42 @@
+{% extends "base_content.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Download</h1>
+
+    <div class="row">
+        <div class="span4">
+            <h2>Packages</h2>
+
+            <p>Salt as been packaged for a number of platforms, these packages
+            can be downloaded via platform specific repositories.</p>
+
+            <ul>
+                <li>Red Hat</li>
+                <li>Fedora</li>
+                <li>Ubuntu</li>
+                <li>Debian</li>
+                <li>Arch</li>
+                <li>FreeBSD</li>
+                <li>Gentoo</li>
+            </ul>
+        </div>
+
+        <div class="span4">
+            <h2>Source</h2>
+
+            <p>The latest Salt source tarball can be found here:</p>
+            <p>https://github.com/downloads/saltstack/salt/salt-0.9.7.tar.gz</p>
+        </div>
+
+        <div class="span4">
+            <h2>Version Control</h2>
+
+            <p>Salt’s latest git checkout can be downloaded from github:</p>
+            <p>git clone git://github.com/saltstack/salt.git</p>
+            <p>Follow Salt on GitHub:</p>
+            <p>https://github.com/saltstack/salt</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

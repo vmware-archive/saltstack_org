@@ -16,15 +16,14 @@
 
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'page' 'code' %}">Code</a></li>
-                    <li><a href="{% url 'page' 'follow' %}">Follow</a></li>
-                    <li><a href="{% url 'page' 'communicate' %}">Communicate</a></li>
-                    <li><a href="{% url 'page' 'learn' %}">Learn</a></li>
+                    {% li_href "index" "Home" %}
+                    {% li_href "learn" "Learn" %}
+                    {% li_href "communicate" "Communicate" %}
+                    {% li_href "download" "Download" %}
                 </ul>
                 <ul class="nav pull-right">
-                    <li><a href="{% url 'download' %}">Download</a></li>
-                    <li><a href="{% url 'documentation' %}">Documentation &raquo;</a></li>
+                    <li><a href="http://docs.saltstack.com"><i class="icon-book"></i> Documentation</a></li>
+                    <li><a href="http://saltstack.com"><i class="icon-user"></i> Services <span class="amp">&</span> Support</a></li>
                 </ul>
 
                 {% comment %}
