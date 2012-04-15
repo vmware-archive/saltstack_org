@@ -10,7 +10,7 @@
 
         {% if debug %}
         <link rel="stylesheet/less" href="{{ STATIC_URL }}less/bootstrap.less">
-        <script src="{{ STATIC_URL }}js/less-1.3.0.min.js"></script>
+        <script src="{{ STATIC_URL }}js/libs/less-1.3.0.min.js"></script>
         {% else %}
         <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
         {% endif %}
@@ -33,12 +33,7 @@
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        {% if debug %}
-        <script src="{{ STATIC_URL }}js/modernizr-2.5.3.js"></script>
-        <script src="{{ STATIC_URL }}js/yepnope.1.5.3.js"></script>
-        {% else %}
-        <script src="{{ STATIC_URL }}js/modernizr.custom.46367.js"></script>
-        {% endif %}
+        {% block head_script %}{% endblock %}
 
         <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     </head>

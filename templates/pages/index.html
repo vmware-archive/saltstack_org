@@ -45,21 +45,28 @@
 
     <div class="row">
         <div class="span3">
-            <h2>Questions being asked</h2>
-            <p></p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>Recent commits</h2>
+
+            <ul id="b-commits"></ul>
+
+            <script type="text/template" id="b-commits-tmpl">
+                <% _.each(commits.slice(0, 10), function(i) { %>
+                    <li>
+                        <% if (i.author.avatar_url) { %>
+                        <img src="<%= i.author.avatar_url %>" alt="" style="height: 15px;">
+                        <% } else { %>
+                        <i class="icon-user"></i>
+                        <% } %>
+                        <em><%= i.author.login || "Unknown" %></em> committed 
+                        <a href="<%= i.url %>"><%= i.sha.slice(0,7) %></a>
+                        <%= prettyDate(i.commit.committer.date) %>
+                    </li>
+                <% }); %>
+            </script>
         </div>
 
         <div class="span3">
             <h2>Issues being resolved</h2>
-
-            <ul id="thelist"></ul>
-
-            <script type="text/template" id="gh-commits">
-                <% _.each(commits, function(i) { %>
-                    <li><%= i.sha %></li>
-                <% }); %>
-            </script>
         </div>
 
         <div class="span3">
@@ -87,7 +94,7 @@
         </div>
 
         <div class="span6">
-            <h2>Salt Stats</h2>
+            <h2>Salt stats</h2>
             <ul>
                 <li>Commit watchers</li>
                 <li>Number of commiters</li>

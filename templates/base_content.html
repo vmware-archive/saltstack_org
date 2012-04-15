@@ -2,6 +2,14 @@
 {% load url from future %}
 {% load li_href %}
 
+{% block head_script %}
+    {% if debug %}
+    <script data-main="{{ STATIC_URL }}js/main_org" src="{{ STATIC_URL }}js/libs/require.js"></script>
+    {% else %}
+    <script data-main="{{ STATIC_URL }}js/main_org" src="{{ STATIC_URL }}js/libs/require.min.js"></script>
+    {% endif %}
+{% endblock %}
+
 {% block navbar %}
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -35,34 +43,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block extra_script %}
-<script>
-    Modernizr.load([{
-        test: window.JSON,
-        nope: '{{ STATIC_URL }}js/json2.js'
-    }, {
-        load: [
-            {% if debug %}
-            '{{ STATIC_URL }}js/jquery.min.js',
-            '{{ STATIC_URL }}js/underscore-min.js',
-            '{{ STATIC_URL }}js/bootstrap.min.js',
-            {% else %}
-            'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js',
-            'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js',
-            'http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.0/bootstrap.min.js',
-            {% endif %}
-
-            '{{ STATIC_URL }}js/backbone.js',
-            '{{ STATIC_URL }}js/saltstack.js'],
-    }],
-    complete: function() {
-        !function( $ ) {
-            $('.hero-unit .carousel').carousel({
-                interval: 2000
-            })
-        }( window.jQuery );
-    });
-</script>
 {% endblock %}
