@@ -28,10 +28,7 @@ require.config({
             }
         },
         'bootstrap': {
-            deps: ['jquery'],
-            attach: function($) {
-                return $;
-            }
+            deps: ['jquery']
         }
     },
     urlArgs: "bust=" +  (new Date()).getTime()
