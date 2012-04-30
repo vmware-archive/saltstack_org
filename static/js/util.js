@@ -153,7 +153,7 @@ if (typeof String.prototype.trim !== 'function') {
 // Takes an ISO time and returns a string representing how
 // long ago the date represents.
 function prettyDate(time){
-    // orig...
+    // SH: modified to assume date is already in the correct format
     // var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
     var date = new Date((time || "")),
             diff = (((new Date()).getTime() - date.getTime()) / 1000),
