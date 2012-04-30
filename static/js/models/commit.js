@@ -2,7 +2,7 @@ define([
     'use!underscore',
     'use!backbone'
 ], function(_, Backbone) {
-    var commit = Backbone.Model.extend({
+    var Commit = Backbone.Model.extend({
         defaults: {
             sha: ''
         },
@@ -10,5 +10,5 @@ define([
         }
     });
 
-    return commit;
+    return Commit;
 });

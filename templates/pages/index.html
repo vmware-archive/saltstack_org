@@ -47,10 +47,9 @@
         <div class="span3">
             <h2>Recent commits</h2>
 
-            <ul id="b-commits"></ul>
-
-            <script type="text/template" id="b-commits-tmpl">
-                <% _.each(commits.slice(0, 10), function(i) { %>
+            <ul id="b-commitlist"></ul>
+            <script type="text/template" id="b-commitlist-tmpl">
+                <% _.each(objslist.slice(0, 10), function(i) { %>
                     <li>
                         <% if (i.author.avatar_url) { %>
                         <img src="<%= i.author.avatar_url %>" alt="" style="height: 15px;">
@@ -67,6 +66,18 @@
 
         <div class="span3">
             <h2>Issues being resolved</h2>
+
+            <ul id="b-issuelist"></ul>
+            <script type="text/template" id="b-issuelist-tmpl">
+                <% _.each(objslist.slice(0, 10), function(i) { %>
+                    <li>
+                    <a href="<%= i.html_url %>">
+                        Issue <%= i.number %> <%= i.state %>
+                        <br><%= prettyDate(i.updated_at) %>
+                    </a>
+                    </li>
+                <% }); %>
+            </script>
         </div>
 
         <div class="span3">
