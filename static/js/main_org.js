@@ -46,11 +46,10 @@ require(['jquery', 'use!bootstrap'], function($){
 // Init main backbone app
 require([
     'jquery',
-    'views/accolades',
-    'util'
-], function($, AppView){
+    'router'
+], function($, SSorgRouter){
     $(document).ready(function(){
-        var appView = new AppView();
-        appView.render();
+        new SSorgRouter();
+        Backbone.history.start({pushState: true});
     });
 });

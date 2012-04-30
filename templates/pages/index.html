@@ -20,19 +20,21 @@
         <div class="span3">
             <h2>Recent commits</h2>
 
-            <ul id="b-commits"></ul>
-
-            <script type="text/template" id="b-commits-tmpl">
-                <% _.each(commits.slice(0, 10), function(i) { %>
+            <ul id="b-commitlist"></ul>
+            <script type="text/template" id="b-commitlist-tmpl">
+                <% _.each(objslist.slice(0, 7), function(i) { %>
                     <li>
+                        <a href="<%= i.url %>">
                         <% if (i.author.avatar_url) { %>
                         <img src="<%= i.author.avatar_url %>" alt="" style="height: 15px;">
                         <% } else { %>
                         <i class="icon-user"></i>
                         <% } %>
-                        <em><%= i.author.login || "Unknown" %></em> committed 
-                        <a href="<%= i.url %>"><%= i.sha.slice(0,7) %></a>
+                        <em><%= i.author.login || "Unknown" %></em> committed
+                        <br>
+                            <%= i.sha.slice(0,7) %>
                         <%= prettyDate(i.commit.committer.date) %>
+                        </a>
                     </li>
                 <% }); %>
             </script>
@@ -40,16 +42,51 @@
 
         <div class="span3">
             <h2>Issues being resolved</h2>
+
+            <ul id="b-issuelist"></ul>
+            <script type="text/template" id="b-issuelist-tmpl">
+                <% _.each(objslist.slice(0, 7), function(i) { %>
+                    <li>
+                    <a href="<%= i.html_url %>">
+                        Issue <%= i.number %>
+                        <br>
+                        <%= i.state %> <%= prettyDate(i.updated_at) %>
+                    </a>
+                    </li>
+                <% }); %>
+            </script>
         </div>
 
         <div class="span3">
             <h2>Ideas</h2>
-            <p>Track the github issues labeled as RFE</p>
+
+            <ul id="b-issuerfelist"></ul>
+            <script type="text/template" id="b-issuerfelist-tmpl">
+                <% _.each(objslist.slice(0, 7), function(i) { %>
+                    <li>
+                    <a href="<%= i.html_url %>">
+                        <%= i.title %>
+                    </a>
+                    </li>
+                <% }); %>
+            </script>
         </div>
 
         <div class="span3">
             <h2>Milestones</h2>
-            <p>Display github issues wrt milestone</p>
+
+            <ul id="b-milestonelist"></ul>
+            <script type="text/template" id="b-milestonelist-tmpl">
+                <% _.each(objslist.slice(0, 7), function(i) { %>
+                    <li>
+                    <a href="<%= i.html_url %>">
+                        <%= i.title %>
+                    <br>
+                    <%= Math.round(Number(i.closed_issues) / (Number(i.closed_issues) + Number(i.open_issues)) * 100) %>% complete
+                    </a>
+                    </li>
+                <% }); %>
+            </script>
         </div>
     </div>
 
