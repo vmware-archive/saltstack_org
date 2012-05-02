@@ -2,7 +2,18 @@
 
 {% block content %}
 <div class="container">
-    <h1>Download</h1>
+    <div class="hero-unit"><div class="hero-container">
+        <div class="unstyled pull-right">
+            <div class="btn-group">
+                <a href="https://github.com/saltstack/salt/zipball/develop" class="btn btn-large btn-inverse">
+                    <i class="icon-download icon-white"></i> zip</a>
+                <a href="https://github.com/saltstack/salt/tarball/develop" class="btn btn-large btn-inverse">
+                    <i class="icon-download icon-white"></i> tar.gz</a>
+            </div>
+        </div>
+
+        <h1>Download</h1>
+    </div></div>
 
     <div class="row">
         <div class="span4">
@@ -12,30 +23,36 @@
             can be downloaded via platform specific repositories.</p>
 
             <ul>
-                <li>Red Hat</li>
-                <li>Fedora</li>
-                <li>Ubuntu</li>
-                <li>Debian</li>
-                <li>Arch</li>
-                <li>FreeBSD</li>
-                <li>Gentoo</li>
+                <li><a href="https://admin.fedoraproject.org/pkgdb/acls/name/salt">Fedora</a></li>
+                <li>RedHat Enterprise Linux / Centos
+                    (<a href="http://dl.fedoraproject.org/pub/epel/5/x86_64/repoview/salt.html">EPEL 5</a>,
+                    <a href="http://dl.fedoraproject.org/pub/epel/6/x86_64/repoview/salt.html">EPEL 6</a>)
+                </li>
+                <li><a href="https://launchpad.net/~saltstack">Ubuntu (PPA)</a></li>
+                <li><a href="http://aur.archlinux.org/packages.php?ID=47512">Arch (AUR)</a></li>
+                <li><a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/sysutils/salt/">FreeBSD</a></li>
+                <li><a href="http://packages.gentoo.org/package/app-admin/salt">Gentoo</a></li>
+                <li>Debian (upstream maintainer needed!)</li>
             </ul>
         </div>
 
         <div class="span4">
-            <h2>Source</h2>
+            <h2>PyPI</h2>
 
-            <p>The latest Salt source tarball can be found here:</p>
-            <p>https://github.com/downloads/saltstack/salt/salt-0.9.7.tar.gz</p>
+            <p>Salt is available on the
+            <a href="http://pypi.python.org/pypi/salt/">Python Package Index</a>
+            and can be installed via <tt>pip</tt> or <tt>easy_install</tt>:<br>
+            <tt>pip install -U salt</tt></p>
         </div>
 
         <div class="span4">
             <h2>Version Control</h2>
 
-            <p>Salt’s latest git checkout can be downloaded from github:</p>
-            <p>git clone git://github.com/saltstack/salt.git</p>
-            <p>Follow Salt on GitHub:</p>
-            <p>https://github.com/saltstack/salt</p>
+            <p>Salt’s latest Git checkout can be downloaded from Github:
+            <br><tt>git clone git://github.com/saltstack/salt.git</tt></p>
+
+            <p>Follow Salt on GitHub:
+            <br><a href="https://github.com/saltstack/salt">https://github.com/saltstack/salt</a></p>
         </div>
     </div>
 </div>
