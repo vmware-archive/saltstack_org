@@ -2,26 +2,36 @@
 
 {% block content %}
 <div class="container">
-    <div class="hero-unit">
-        <div class="hero-container">
-            <div class="hero-bg"><img src="/static/img/community.jpg" alt=""></div>
-            <div class="hero-content">
-                <h1>Learn</h1>
-                <p>Start down the path to become a Salt master, read the
-                documentation, get into the code, watch screencasts and
-                presentations.</p>
-            </div>
-        </div>
-    </div>
+    <div class="hero-unit"><div class="hero-container">
+        <h1>Learn <span class="amp">&</span> Communicate</h1>
 
-    <div class="row">
-        <div class="span6">
-            <h2>Learn the code</h2>
+        <p>Salt benefits from a vibrant and growing community. Our goal is to
+        build a community where we learn from each other and where we can reach
+        our goals together.</p>
 
-            <dl class="logos">
-                <dt><a href="https://github.com/saltstack/salt/">
-                    <img src="{{ STATIC_URL }}img/logos/github.png"></a></dt>
-                <dd>
+        <p>Joining the community is easy, join the Salt development on GitHub,
+        chat with the team in IRC, and get updates and join in-depth
+        discussions on the mailing list.</p>
+    </div></div>
+
+    <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-code" data-toggle="tab">Code</a></li>
+            <li><a href="#tab-docs" data-toggle="tab">Documentation</a></li>
+            <li><a href="#tab-screencasts" data-toggle="tab">Screencasts</a></li>
+            <li><a href="#tab-presentations" data-toggle="tab">Presentations</a></li>
+            <li><a href="#tab-mediakit" data-toggle="tab">Media Kit</a></li>
+            <li><a href="#tab-irc" data-toggle="tab">IRC</a></li>
+            <li><a href="#tab-mailinglist" data-toggle="tab">Mailing list</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-code">
+                <h2>Learn the code
+                    <img src="{{ STATIC_URL }}img/logos/github.png" alt="" style="height: 30px;"></h2>
+
+                <a href="https://github.com/saltstack/salt/"></a>
+
                 <p>Join the Salt development team on GitHub, contribute code,
                 watch the active development, fork Salt Stack projects and help
                 us deliver a continually growing and exciting project. If you
@@ -35,65 +45,166 @@
                 at the github help to learn how to contribute code to Salt!</p>
 
                 <p><a href="http://help.github.com">http://help.github.com</a></p>
-                </dd>
-            </dl>
-        </div>
+            </div>
 
-        <div class="span6">
-            <h2>Communicate</h2>
-            <p>Salt has been made to be easy to expand, and we want your
-            expansions! Dive into the code to learn how to mold Salt to your
-            needs and be able to contribute back to the community.</p>
+            <div class="tab-pane" id="tab-docs">
+                <h2>Documentation
+                    <img src="{{ STATIC_URL }}img/logos/rtd.png" alt="" style="height: 35px;"></h2>
+                
+                <p>The official Salt documentation is continuously built
+                courtesy of Read the Docs at
+                <a href="http://docs.saltstack.com">http://docs.saltstack.org</a></p>
 
-            <dl class="logos">
-                {% with "http://webchat.freenode.net/?channels=salt&uio=Mj10cnVlJjk9dHJ1ZSYxMD10cnVl83" as freenode_webchat %}
-                <dt><a href="{{ freenode_webchat }}">
-                    <img src="/static/img/logos/freenode.png"></a></dt>
-                <dd><p>Join us via IRC in the <a href="{{ freenode_webchat }}"><tt>#salt</tt></a> channel.</p></dd>
-                {% endwith %}
+                <h4>Offline? Download the full documentation</h4>
+                <ul class="unstyled">
+                    <li><a href="http://media.readthedocs.org/pdf/salt/latest/salt.pdf" class="btn">
+                        <i class="icon-print"></i> PDF</a></li>
+                    <li><a href="http://media.readthedocs.org/pdf/salt/latest/salt.epub" class="btn">
+                        <i class="icon-book"></i> ePUB</a></li>
+                </ul>
+            </div>
 
+            <div class="tab-pane" id="tab-screencasts">
+                <h2>Screencasts</h2>
 
-                {% with "https://groups.google.com/forum/#!topic/salt-users/" as group_url %}
-                <dt><a href="{{ group_url }}">
-                    <img src="{{ STATIC_URL }}img/logos/google-groups.gif"></a></dt>
-                <dd><form action="http://groups.google.com/group/salt-users/boxsubscribe">
-                    <p>Join the <a href="{{ group_url }}">mailing list</a>:
-                    <br>
-                    <input type="email" name="email" placeholder="Email address">
-                    <button type="submit" name="sub">Subscribe</button></p>
-                </form></dd>
-                {% endwith %}
-            </dl>
+                <hr>
+                <p>Got a blog post about Salt? We want to link to it!</p>
+                <form action="" class="form-inline">
+                    <div class="input-prepend">
+                        {% spaceless %}
+                        <span class="add-on"><i class="icon-bookmark"></i></span>
+                        <input type="email" class="input-small" name="email" id="email" placeholder="Web address">
+                        {% endspaceless %}
+                        <button type="submit" class="btn">Submit a URL</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane" id="tab-presentations">
+                <h2>Presentations</h2>
+                <p>Start with a Salt presentation and mold it to your needs.
+                Presentations are available on beginning Salt up through deep Salt
+                development.</p>
+
+                <hr>
+                <p>Got a presentation about Salt? We want to link to it!</p>
+                <form action="" class="form-inline">
+                    <div class="input-prepend">
+                        {% spaceless %}
+                        <span class="add-on"><i class="icon-bookmark"></i></span>
+                        <input type="email" class="input-small" name="email" id="email" placeholder="Web address">
+                        {% endspaceless %}
+                        <button type="submit" class="btn">Submit a URL</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane" id="tab-mediakit">
+                <h2>Media Kit</h2>
+                <p>Logos and data about how to publish information about Salt</p>
+
+                <ul class="unstyled">
+                    <li><a href="{{ STATIC_URL }}downloads/salt-logos.zip" class="btn"><i class="icon-download-alt"></i> zip</a></li>
+                    <li><a href="{{ STATIC_URL }}downloads/salt-logos.tar.gz" class="btn"><i class="icon-download-alt"></i> tar.gz</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="tab-irc">
+                <h2>IRC
+                    <img src="/static/img/logos/freenode.png" alt="" style="height: 30px;"></h2>
+                <p>Chat and ask questions in the <tt>#salt</tt> channel on
+                Freenode. Get to know the community!</p>
+                <h3>New to IRC? <small>IRC Tips</small></h3>
+                <dl>
+                    <dt>Search before you ask</dt>
+                    <dd>
+                    <ul>
+                        <li><a href="https://groups.google.com/forum/#!forum/salt-users">Mailing list archives</a></li>
+                        <li><a href="http://irclog.perlgeek.de/salt/">IRC logs</a></li>
+                    </ul>
+                    </dd>
+
+                    <dt>No introductions needed</dt>
+                    <dd>There's no need to introduce yourself or ask "Can I ask a
+                    question?" Just ask!</dd>
+
+                    <dt>Wait for an answer</dt>
+                    <dd>If no one responds right away, don't give up. The person
+                    with the answer might be busy coding or
+                    <acronym title="away from keyboard">afk</acronym>. Leave your
+                    window open and someone will reply to you.</dd>
+
+                    <dt>Use the webcat interface</dt>
+                    <dd>
+                    Use <a href="http://webchat.freenode.net/?channels=salt&uio=Mj10cnVlJjk9dHJ1ZSYxMD10cnVl83">
+                        Freenode's webchat</a> interface to connect without
+                    installing any software.
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="tab-pane" id="tab-mailinglist">
+                <h2>Mailing List
+                    <img src="/static/img/logos/google-groups.gif" alt="" style="height: 30px;"></h2>
+                <p><a href="https://groups.google.com/forum/#!forum/salt-users">Follow announcements and post questions on the mailing list.</a></p>
+
+                <form action="http://groups.google.com/group/salt-users/boxsubscribe" class="form-inline">
+                    <div class="input-prepend">
+                        {% spaceless %}
+                        <span class="add-on"><i class="icon-envelope"></i></span>
+                        <input type="email" class="input-small" name="email" id="email" placeholder="Email address">
+                        {% endspaceless %}
+                        <button type="submit" class="btn">Join the mailing list</button>
+                    </div>
+                </form>
+
+                <h3>Recent posts</h3>
+            </div>
         </div>
     </div>
 
+    <hr>
+
     <div class="row">
-        <div class="span4">
-            <h3>Documentation</h3>
-
-            <p>The Official Salt documentation is continuously built via
-            readthedocs.org: http://docs.saltstack.com</p>
-
-            <!--
-            <When/if we get a community wiki up>
-            Contribute to and read information from the community wiki:
-            http://wikiawesome.awesome
-            -->
+        <div class="span2">
+            <a href="http://www.linkedin.com/pub/thomas-s-hatch/21/a86/175">
+                <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Thomas S. Hatch's profile on LinkedIn">
+            </a>
         </div>
 
-        <div class="span4">
-            <h3>Screencasts</h3>
-            <p>
-            Screencast series:
-
-            blip.tv url
-            </p>
+        <div class="span2">
+            <a href="https://twitter.com/intent/tweet?button_hashtag=saltstack" class="twitter-hashtag-button">Tweet #saltstack</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
 
-        <div class="span4">
-            <h3>Presentations</h3>
-            <p>List presentations</p>
+        <div class="span2">
+            <a href="https://plus.google.com/114449193225626631691?prsrc=3" rel="author" style="text-decoration:none;">
+                <img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="" style="border:0;width:32px;height:32px;"/>
+            </a>
+        </div>
+
+        <div class="span2">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="http://www.facebook.com/SaltStack" data-send="false" data-layout="box_count" data-width="140" data-show-faces="true"></div>
+        </div>
+
+        <div class="span2">
+            <a href="http://feeds.feedburner.com/TheRed45" title="Subscribe to the Salt blog" rel="alternate" type="application/rss+xml">
+                <img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0"/>
+            </a>
+        </div>
+
+        <div class="span2">
+            <script type="text/javascript" src="http://www.ohloh.net/p/488977/widgets/project_thin_badge.js"></script>
         </div>
     </div>
 </div>
+
 {% endblock %}
