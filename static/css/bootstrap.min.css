@@ -181,7 +181,7 @@ pre.prettyprint,
 }
 body {
   margin: 0;
-  font-family: "News Cycle", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
   color: #222222;
@@ -371,7 +371,7 @@ a:hover {
 }
 p {
   margin: 0 0 9px;
-  font-family: "News Cycle", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
@@ -392,7 +392,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: inherit;
+  font-family: "News Cycle", sans-serif;
   font-weight: normal;
   color: #3196b6;
   text-rendering: optimizelegibility;
@@ -655,7 +655,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "News Cycle", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 label {
   display: block;
@@ -2738,7 +2738,7 @@ input[type="submit"].btn.btn-mini {
   clear: both;
 }
 .tab-content {
-  display: table;
+  display: block;
   width: 100%;
 }
 .tabs-below .nav-tabs,
