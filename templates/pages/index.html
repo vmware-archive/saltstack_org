@@ -18,6 +18,47 @@
     </div>
 
     <div class="row">
+        <div class="span5">
+            <h2>News</h2>
+            <ul>
+                <li>Announcing the first <a href="{% url 'page' 'sprint' %}">Great Salt Sprint</a>! June
+                30th; sponsored locations across the country. Don't miss
+                it.</li>
+            </ul>
+        </div>
+
+        <div class="span4">
+            <h2>Contributor accolades</h2>
+            <p>This page tracks ohloh and github, and posts impressive stats on
+            salt developers, like  from:</p>
+            <ul>
+                <li>Tom is the #5 python dev in the world</li>
+                <li>Seth has an 8 kudo ranking etc</li>
+                <li>the committer rankings on github</li>
+                <li>Congratulations to new commiters</li>
+            </ul>
+        </div>
+
+        <div class="span3">
+            <h2>Salt stats</h2>
+            <ul>
+                <li>Commit watchers</li>
+                <li>Number of commiters</li>
+                <li>Number of modules</li>
+                <li>Number of functions</li>
+                <li>Number of renderers</li>
+                {% comment %}
+                Ohloh
+                total LOC
+                active contributors
+                {% endcomment %}
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
         <div class="span3">
             <h2>Recent commits</h2>
 
@@ -88,45 +129,6 @@
                     </li>
                 <% }); %>
             </script>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="span5">
-            <h2>News</h2>
-            <ul>
-                <li>Announcing the first <a href="{% url 'page' 'sprint' %}">Great Salt Sprint</a>! June
-                30th; sponsored locations across the country. Don't miss
-                it.</li>
-            </ul>
-        </div>
-
-        <div class="span4">
-            <h2>Contributor accolades</h2>
-            <p>This page tracks ohloh and github, and posts impressive stats on
-            salt developers, like  from:</p>
-            <ul>
-                <li>Tom is the #5 python dev in the world</li>
-                <li>Seth has an 8 kudo ranking etc</li>
-                <li>the committer rankings on github</li>
-                <li>Congratulations to new commiters</li>
-            </ul>
-        </div>
-
-        <div class="span3">
-            <h2>Salt stats</h2>
-            <ul>
-                <li>Commit watchers</li>
-                <li>Number of commiters</li>
-                <li>Number of modules</li>
-                <li>Number of functions</li>
-                <li>Number of renderers</li>
-                {% comment %}
-                Ohloh
-                total LOC
-                active contributors
-                {% endcomment %}
-            </ul>
         </div>
     </div>
 
