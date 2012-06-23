@@ -6,7 +6,7 @@ define([
 ], function(_, Backbone, Commit, GhCollection){
     var CommitList = GhCollection.extend({
         model: Commit,
-        gh_url: 'commits?callback=?',
+        gh_url: '/commits?callback=?',
         opt_objs: ['author', 'commit']
     });
 

@@ -4,7 +4,7 @@ define([
 ], function(_, Backbone){
     var GhCollection = Backbone.Collection.extend({
         initialize: function() {
-            this.url = 'https://api.github.com/repos/saltstack/salt/' + this.gh_url;
+            this.url = 'https://api.github.com/repos/saltstack/salt' + this.gh_url;
         },
 
         parse: function(resp, xhr) {

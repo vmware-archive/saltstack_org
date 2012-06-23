@@ -6,7 +6,7 @@ define([
 ], function(_, Backbone, issue, GhCollection){
     var MilestoneList = GhCollection.extend({
         model: issue,
-        gh_url: 'milestones?callback=?',
+        gh_url: '/milestones?callback=?',
         opt_objs: []
     });
 

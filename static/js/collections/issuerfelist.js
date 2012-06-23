@@ -6,7 +6,7 @@ define([
 ], function(_, Backbone, issue, GhCollection){
     var IssueRFEList = GhCollection.extend({
         model: issue,
-        gh_url: 'issues?callback=?&labels=RFE&sort=updated',
+        gh_url: '/issues?callback=?&labels=RFE&sort=updated',
         opt_objs: []
     });
 
