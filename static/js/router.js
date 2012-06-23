@@ -8,10 +8,11 @@ define([
     'collections/issuelist',
     'collections/issuerfelist',
     'collections/milestonelist',
+    'collections/statslist',
     'views/ghview',
     'util'
 ], function($, _, Router, Commit, Issue, CommitList, IssueList, IssueRFEList,
-        MilestoneList, GhView){
+        MilestoneList, StatsList, GhView){
     var SSorgRouter = Backbone.Router.extend({
         routes: {
             '': 'index',
@@ -49,6 +50,14 @@ define([
                 collection: new MilestoneList(),
                 el: $('#b-milestonelist'),
                 template: _.template($('#b-milestonelist-tmpl').html())
+            });
+
+            // Grab stats
+            var statsView = new GhView({
+                model: Issue,
+                collection: new StatsList(),
+                el: $('#b-statslist'),
+                template: _.template($('#b-statslist-tmpl').html())
             });
         },
 

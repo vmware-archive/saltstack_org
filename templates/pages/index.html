@@ -41,17 +41,15 @@
 
         <div class="span3">
             <h2>Salt stats</h2>
-            <ul>
-                <li>Commit watchers</li>
-                <li>Number of commiters</li>
-                <li>Number of modules</li>
-                <li>Number of functions</li>
-                <li>Number of renderers</li>
-                {% comment %}
-                Ohloh
-                total LOC
-                active contributors
-                {% endcomment %}
+
+            <ul id="b-statslist"></ul>
+            <script type="text/template" id="b-statslist-tmpl">
+                <% _.each(objslist, function(i) { %>
+                    <li>Forks: <%= i.forks %></li>
+                    <li>Watchers: <%= i.watchers %></li>
+                    <li>Size: <%= i.size %></li>
+                <% }); %>
+            </script>
             </ul>
         </div>
     </div>
