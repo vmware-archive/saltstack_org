@@ -1,0 +1,118 @@
+{% extends "base_content.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="hero-unit carousel" id="hero-quotes"><div class="hero-container">
+        <h1>The Great Salt Development Sprint</h1>
+
+        <p>Mark the date for the first multi-city Salt development sprint.</p>
+        <p><span class="btn btn-large" disabled>June 30</span> all day.</p>
+    </div></div>
+
+    <div class="row">
+        <div class="span12">
+
+            <div class="row">
+                <div class="span10">
+                    <div class="row">
+                        <div class="span6">
+                            <h1>Goals</h1>
+
+                            <p>This development sprint is being conducted with the
+                            express hope of adding more complete unit and integration
+                            test coverage to Salt, but as always, feature additions and
+                            bug fixes are welcome!</p>
+                        </div>
+
+                        <div class="span4">
+                            <img src="{{ STATIC_URL }}img/salt-shirt.png" alt="Salt t-shirt" class="pull-left">
+                            Come for the shirt;<br>stay for the food,
+                            smart conversation, and the hacking on Salt.
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="span3">
+                            <h2>Salt Lake City, Utah
+                            <small>Sponsored by C7</small></h2>
+
+                            <p>8:00 AM to 8:00 PM (MST)</p>
+
+                            <address>
+                                14944 Pony Express Dr.<br>
+                                Bluffdale, UT 84065
+                            </address>
+                            <iframe width="220" height="220" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=14944+Pony+Express+Dr.+Bluffdale,+UT+84065&amp;ie=UTF8&amp;hq=&amp;hnear=14944+S+Pony+Express+Rd,+Bluffdale,+Utah+84065&amp;t=m&amp;ll=40.478553,-111.904678&amp;spn=0.057453,0.075188&amp;z=12&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=14944+Pony+Express+Dr.+Bluffdale,+UT+84065&amp;ie=UTF8&amp;hq=&amp;hnear=14944+S+Pony+Express+Rd,+Bluffdale,+Utah+84065&amp;t=m&amp;ll=40.478553,-111.904678&amp;spn=0.057453,0.075188&amp;z=12&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                        </div>
+
+                        <div class="span3">
+                            <h2>Santa Monica, California
+                            <small>Sponsored by Cars.com</small></h2>
+
+                            <p>9:00 AM to 9:00 PM (PST)</p>
+
+                            <address>
+                                701 Santa Monica Blvd<br>
+                                Santa Monica, CA 90401
+                            </address>
+                            <iframe width="220" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=701+Santa+Monica+Blvd,+Santa+Monica,+CA&amp;aq=0&amp;oq=701&amp;sll=40.478542,-111.904558&amp;sspn=0.008977,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=701+Santa+Monica+Blvd,+Santa+Monica,+California+90401&amp;t=m&amp;ll=34.018945,-118.492355&amp;spn=0.028456,0.037594&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=701+Santa+Monica+Blvd,+Santa+Monica,+CA&amp;aq=0&amp;oq=701&amp;sll=40.478542,-111.904558&amp;sspn=0.008977,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=701+Santa+Monica+Blvd,+Santa+Monica,+California+90401&amp;t=m&amp;ll=34.018945,-118.492355&amp;spn=0.028456,0.037594&amp;z=13&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                        </div>
+
+                        <div class="span3">
+                            <h2>Portland, Oregon
+                            <small>Sponsored by Idealist</small></h2>
+
+                            <p class="pull-right"><a href="http://www.meetup.com/pdxpython/events/57173242/">
+                                <img src="{{ STATIC_URL }}img/logos/meetup.png" alt="Meetup" style="width: 33px;"></a></p>
+
+                            <p>10:00 AM To 6:00 PM (PST)</p>
+
+                            <address>
+                                209 SW Oak St.<br>
+                                Portland, OR
+                            </address>
+
+                            <iframe width="220" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=209+SW+Oak+St.,+Portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=209+SW+Oak+St,+Portland,+Multnomah,+Oregon+97204&amp;t=m&amp;ll=45.520782,-122.673254&amp;spn=0.012027,0.018797&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=209+SW+Oak+St.,+Portland,+OR&amp;ie=UTF8&amp;hq=&amp;hnear=209+SW+Oak+St,+Portland,+Multnomah,+Oregon+97204&amp;t=m&amp;ll=45.520782,-122.673254&amp;spn=0.012027,0.018797&amp;z=14&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span2">
+                    <h2>Sponsors</h2>
+
+                    <ul class="unstyled">
+                        <li>
+                        <hr>
+                        <a href="http://www.linuxfund.org/">
+                            <img src="{{ STATIC_URL }}img/logos/sponsors/linuxfund.gif" alt="LinuxFund" style="width: 181px;">
+                        </a>
+                        </li>
+
+                        <li>
+                        <hr>
+                        <a href="http://www.c7dc.com/">
+                            <img src="{{ STATIC_URL }}img/logos/sponsors/c7-logo1.png" alt="C7 Datacenters">
+                        </a>
+                        </li>
+                        <li>
+                        <hr>
+                        <a href="http://www.cars.com/">
+                            <img src="{{ STATIC_URL }}img/logos/sponsors/carslogo_white_165.gif" alt="Cars.com">
+                        </a>
+                        </li>
+                        <li>
+                        <hr>
+                        <a href="http://www.idealist.org/">
+                            <img src="{{ STATIC_URL }}img/logos/sponsors/idealistlogo-100x100.png" alt="Idealist">
+                            <span style="font-size: 36px; font-weight: bold; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #339AEE;">idealist</style></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

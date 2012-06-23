@@ -1,4 +1,5 @@
 {% extends "base_content.html" %}
+{% load url from future %}
 
 {% block content %}
 <div class="container">
@@ -91,7 +92,16 @@
     </div>
 
     <div class="row">
-        <div class="span6">
+        <div class="span5">
+            <h2>News</h2>
+            <ul>
+                <li>Announcing the first <a href="{% url 'page' 'sprint' %}">Great Salt Sprint</a>! June
+                30th; sponsored locations across the country. Don't miss
+                it.</li>
+            </ul>
+        </div>
+
+        <div class="span4">
             <h2>Contributor accolades</h2>
             <p>This page tracks ohloh and github, and posts impressive stats on
             salt developers, like  from:</p>
@@ -103,7 +113,7 @@
             </ul>
         </div>
 
-        <div class="span6">
+        <div class="span3">
             <h2>Salt stats</h2>
             <ul>
                 <li>Commit watchers</li>
