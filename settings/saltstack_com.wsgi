@@ -11,7 +11,7 @@ import django.core.handlers.wsgi
 dj_application = django.core.handlers.wsgi.WSGIHandler()
 
 def salt_application(environ, start_response):
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'saltstack_org.settings'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'saltstack_com.settings'
     return dj_application(environ, start_response)
 
 application = salt_application
