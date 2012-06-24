@@ -2,8 +2,6 @@ define([
     'jquery',
     'use!underscore',
     'router',
-    'models/commit',
-    'models/issue',
     'collections/commitlist',
     'collections/issuelist',
     'collections/issuerfelist',
@@ -11,7 +9,7 @@ define([
     'collections/statslist',
     'views/ghview',
     'util'
-], function($, _, Router, Commit, Issue, CommitList, IssueList, IssueRFEList,
+], function($, _, Router, CommitList, IssueList, IssueRFEList,
         MilestoneList, StatsList, GhView){
     var SSorgRouter = Backbone.Router.extend({
         routes: {
@@ -22,7 +20,6 @@ define([
         index: function() {
             // Grab commits
             var commitView = new GhView({
-                model: Commit,
                 collection: new CommitList(),
                 el: $('#b-commitlist'),
                 template: _.template($('#b-commitlist-tmpl').html())
@@ -30,7 +27,6 @@ define([
 
             // Grab issues
             var issueView = new GhView({
-                model: Issue,
                 collection: new IssueList(),
                 el: $('#b-issuelist'),
                 template: _.template($('#b-issuelist-tmpl').html())
@@ -38,7 +34,6 @@ define([
 
             // Grab RFE
             var issueRFEView = new GhView({
-                model: Issue,
                 collection: new IssueRFEList(),
                 el: $('#b-issuerfelist'),
                 template: _.template($('#b-issuerfelist-tmpl').html())
@@ -46,7 +41,6 @@ define([
 
             // Grab milestones
             var milestoneView = new GhView({
-                model: Issue,
                 collection: new MilestoneList(),
                 el: $('#b-milestonelist'),
                 template: _.template($('#b-milestonelist-tmpl').html())
@@ -54,7 +48,6 @@ define([
 
             // Grab stats
             var statsView = new GhView({
-                model: Issue,
                 collection: new StatsList(),
                 el: $('#b-statslist'),
                 template: _.template($('#b-statslist-tmpl').html())

@@ -1,10 +1,8 @@
 define([
     'use!underscore',
-    'use!backbone',
-    'models/issue'
-], function(_, Backbone, issue){
+    'use!backbone'
+], function(_, Backbone){
     var StatsList = Backbone.Collection.extend({
-        model: issue,
         initialize: function() {
             this.url = 'https://api.github.com/repos/saltstack/salt?callback=?';
         },
