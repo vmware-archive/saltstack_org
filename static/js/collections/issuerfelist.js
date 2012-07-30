@@ -1,6 +1,6 @@
 define([
-    'use!underscore',
-    'use!backbone',
+    'underscore',
+    'backbone',
     'collections/ghcollection'
 ], function(_, Backbone, GhCollection){
     var IssueRFEList = GhCollection.extend({

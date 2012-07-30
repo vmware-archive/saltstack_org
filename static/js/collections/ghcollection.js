@@ -1,6 +1,6 @@
 define([
-    'use!underscore',
-    'use!backbone'
+    'underscore',
+    'backbone'
 ], function(_, Backbone){
     var GhCollection = Backbone.Collection.extend({
         initialize: function() {

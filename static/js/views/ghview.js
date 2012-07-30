@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'use!backbone'
+    'backbone'
 ], function($, Backbone){
     var GhView = Backbone.View.extend({
         tagName: 'li',

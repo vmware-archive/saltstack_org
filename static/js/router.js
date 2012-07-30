@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'use!underscore',
+    'underscore',
     'router',
     'collections/commitlist',
     'collections/issuelist',

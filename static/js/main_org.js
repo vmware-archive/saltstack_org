@@ -1,14 +1,9 @@
 require.config({
     paths: {
-        // Require.js plugins
-        use: 'libs/use',
-        text: 'libs/text',
-        order: 'libs/order',
-
         // Major libs
         jquery: 'libs/jquery.min',
 
-        // Non-AMD libs (for use with !use plugin)
+        // Non-AMD libs (for use with shim)
         underscore: 'libs/underscore-min',
         backbone: 'libs/backbone-min',
         bootstrap: 'libs/bootstrap.min',
@@ -17,25 +12,24 @@ require.config({
         util: 'util',
         templates: '../templates'
     },
-    use: {
+    shim: {
         'underscore': {
-            attach: '_'
+            exports: '_'
         },
         'backbone': {
-            deps: ['use!underscore', 'jquery'],
-            attach: function(_, $) {
-                return Backbone;
-            }
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
         },
         'bootstrap': {
-            deps: ['jquery']
+            deps: ['jquery'],
+            exports: 'jquery.bootstrap'
         }
     },
     urlArgs: "bust=" +  (new Date()).getTime()
 });
 
 // Init the Bootstrap carousel
-require(['jquery', 'use!bootstrap'], function($){
+require(['jquery', 'bootstrap'], function($){
     $(document).ready(function(){
         $('.hero-unit .carousel').carousel({
             interval: 2000
