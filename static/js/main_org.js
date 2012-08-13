@@ -44,6 +44,6 @@ require([
 ], function($, SSorgRouter){
     $(document).ready(function(){
         new SSorgRouter();
-        Backbone.history.start({pushState: true});
+        Backbone.history.start();
     });
 });
