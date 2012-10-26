@@ -44,7 +44,6 @@
             <p>Bring your servers up to a known configured state by writing
             simple lists of items and defining attributes on those lists—no
             need to learn yet another language.</p>
-            <p>(COWBELL included.)</p>
         </div>
     </div>
 
@@ -58,7 +57,6 @@
             <script type="text/template" id="b-commitlist-tmpl">
                 <% _.each(objslist.slice(0, 7), function(i) { %>
                     <li>
-                        <a href="<%= i.url %>">
                         <% if (i.author.avatar_url) { %>
                         <img src="<%= i.author.avatar_url %>" alt="" style="height: 15px;">
                         <% } else { %>
@@ -68,7 +66,6 @@
                         <br>
                             <%= i.sha.slice(0,7) %>
                         <%= prettyDate(i.commit.committer.date) %>
-                        </a>
                     </li>
                 <% }); %>
             </script>
@@ -81,11 +78,9 @@
             <script type="text/template" id="b-issuelist-tmpl">
                 <% _.each(objslist.slice(0, 7), function(i) { %>
                     <li>
-                    <a href="<%= i.html_url %>">
                         Issue <%= i.number %>
                         <br>
                         <%= i.state %> <%= prettyDate(i.updated_at) %>
-                    </a>
                     </li>
                 <% }); %>
             </script>
@@ -98,26 +93,7 @@
             <script type="text/template" id="b-issuerfelist-tmpl">
                 <% _.each(objslist.slice(0, 7), function(i) { %>
                     <li>
-                    <a href="<%= i.html_url %>">
                         <%= i.title %>
-                    </a>
-                    </li>
-                <% }); %>
-            </script>
-        </div>
-
-        <div class="span3">
-            <h2>Milestones</h2>
-
-            <ul id="b-milestonelist"></ul>
-            <script type="text/template" id="b-milestonelist-tmpl">
-                <% _.each(objslist.slice(0, 7), function(i) { %>
-                    <li>
-                    <a href="<%= i.url %>">
-                        <%= i.title %>
-                    <br>
-                    <%= Math.round(Number(i.closed_issues) / (Number(i.closed_issues) + Number(i.open_issues)) * 100) %>% complete
-                    </a>
                     </li>
                 <% }); %>
             </script>
